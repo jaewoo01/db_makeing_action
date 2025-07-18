@@ -15,6 +15,11 @@ import pandas as pd
 import sqlite3
 import time
 import csv
+service = Service(executable_path="/usr/bin/chromedriver")
+options = Options()
+options.add_argument("--headless") # 창 없음
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
 
 #빈리스트 생성
 food_number_list             = [] #음식 번호
@@ -36,7 +41,7 @@ header                       = ["food_number","food_name","cooking_type","food_n
 
 
 url_food = "https://www.menupan.com/Cook/RecipeRe.asp?difficulty=10" # 난이도 분류 음식 사이트
-driver = wb.Chrome()
+driver = wb.Chrome(service=service, options=options)
 wait = WebDriverWait(driver, 10) # 최대 10초까지 대기
 driver.get(url_food)
 
