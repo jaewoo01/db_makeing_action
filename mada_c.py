@@ -6,6 +6,7 @@
 
 from selenium import webdriver as wb # 브라우저 제어
 from selenium.webdriver.chrome.service import Service # Service 셋팅
+from selenium.webdriver.chrome.options import Options # options 셋팅
 from selenium.webdriver.common.by import By # 선택자 구분
 from selenium.webdriver.common.keys import Keys # 키보드 제어
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException # selenium 요소 에러 예외 처리 코드
